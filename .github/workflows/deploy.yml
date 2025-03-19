@@ -34,4 +34,4 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: "dist/*"
-          target: "/usr/local/nginx/" # 2222
+          target: "/usr/local/nginx/" # 2222333
