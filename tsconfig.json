@@ -1,0 +1,8 @@
+{
+  "include": ["./auto-imports.d.ts", "src/**/*.vue"],
+  "compilerOptions": {
+    "types": ["vite/client", "node"]
+  },
+
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
