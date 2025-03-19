@@ -26,7 +26,8 @@ jobs:
 
       - name: Build project
         run: pnpm run build
-     - name: Set up SSH
+
+      - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
