@@ -1,19 +1,24 @@
+<!-- watchEfect watchPostEffect watchSyncEffect-->
 <template>
-  <h2>WatchEffect</h2>
-  <button @click="str = 'watchEffect11'">更新str</button>
-  <div id="post">{{ str }}</div>
+  <div style="padding: 0 250px">
+    <h2>WatchEffect</h2>
+    <button @click="count++">add</button>
+    <div id="post">{{ count }}</div>
+    <!-- <div id="post">{{ newCount }}</div> -->
+  </div>
 </template>
 <script lang="ts" setup>
-const str = ref<string>('watchEffect')
-const newStr = ref<string>('')
+const count = ref<number>(0);
+const newCount = ref<string>("");
 watchEffect(
   () => {
-    newStr.value = 'new-' + str.value
-    console.log('===', newStr.value)
-    console.log('===', document.getElementById('post'))
+    newCount.value = "更新后的count: " + count.value.toString();
+    const dom = document.getElementById("post");
+    console.log(dom);
+    console.log(dom?.innerHTML, "-------");
   },
   {
-    flush: 'post'
+    flush: "post",
   }
-)
+);
 </script>
